@@ -75,8 +75,8 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'dugreshyadav/git-jenkins-project'
         GIT_BRANCH = 'test/multibranch'  // single branch
-        TEST_HOST = 'ec2-user@15.206.172.142'
-        PROD_HOST = 'ec2-user@13.233.100.99'
+        TEST_HOST = 'ec2-user@43.205.95.245'
+        PROD_HOST = 'ec2-user@43.204.145.1'
         EC2_KEY = credentials('ec2-ssh-key')
     }
 
