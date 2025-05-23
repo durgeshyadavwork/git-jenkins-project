@@ -1,9 +1,12 @@
-FROM node:18
+# Base image me nginx use karenge static website serve karne ke liye
+FROM nginx:alpine
 
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
-COPY . .
+# Copy index.html ko default nginx folder me copy karenge
+COPY index.html /usr/share/nginx/html/index.html
 
-EXPOSE 3000
-CMD ["npm", "start"]
+# Nginx by default port 80 pe run karta hai
+EXPOSE 80
+
+# CMD default hai, so likhna optional hai
+CMD ["nginx", "-g", "daemon off;"]
+
